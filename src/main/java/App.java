@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import kr.co.arukei.entity.User_info;
+import kr.co.arukei.entity.User_Info;
 
 
 public class App {
@@ -15,7 +15,7 @@ public class App {
 		EntityManager em = emf.createEntityManager();
 
 		// select * from user_info where no = 1;
-		User_info result = em.find(User_info.class, 1);
+		User_Info result = em.find(User_Info.class, 1);
 		System.out.println(result);
 //		List<User_info> results = em.createQuery("select u from User_info u",User_info.class).getResultList();
 //		System.out.println(results);
