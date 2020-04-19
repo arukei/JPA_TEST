@@ -11,9 +11,9 @@
 Find User Password Result
 </h1>
 
-당신의 Password는 ${password }
+당신의 Password는 ${password }<br>
 
-<a href="home">Home으로 돌아가기</a>
+<a href="/JPA">Home으로 돌아가기</a>
 
 </body>
 </html>

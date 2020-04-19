@@ -3,6 +3,7 @@ package kr.co.arukei.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
@@ -13,14 +14,12 @@ import javax.persistence.Table;
 
 // name으로 원하는 SQL문을 호출 가능
 // SOQL처럼 변수값? 파라미터값의 앞에는 :붙임 
-//@NamedQuery(
-//		name = "User_Info.findBypassword",
-//		query = "SELECT u FROM User_Info u WHERE u.password = :password and u.id=:id")
-@NamedQuery(
-		name = "User_Info.findUserPassword",
-		query = "SELECT password FROM User_Info u WHERE u.email = :email and u.id=:id")
 
+@NamedQueries({
+		@NamedQuery(name = "User_Info.findBypassword", query = "SELECT u FROM User_Info u WHERE u.password = :password and u.id=:id"),
+		@NamedQuery(name = "User_Info.findUserPassword", query = "SELECT u FROM User_Info u WHERE u.email = :email and u.id=:id")
 
+})
 
 public class User_Info {
 

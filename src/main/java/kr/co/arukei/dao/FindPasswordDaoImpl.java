@@ -26,8 +26,8 @@ public class FindPasswordDaoImpl implements FindPasswordDao {
 				// 실행된 결과를 받아옴 
 				.getResultList();
 
+		// 잘못된 정보 입력시 NullPointException 발생
 		User_Info userinfo = result.get(0);
-		
 		String password =userinfo.getPassword();
 
 		
