@@ -28,7 +28,14 @@ public class FindPasswordServiceImpl implements FindPasswordService {
 			String first=password.substring(0,1);
 			String last=password.substring(password.length()-1,password.length());
 			
-			 result = first + "***" +last;
+			// 잘라낸 글자 사이에  문자 숫자만큼 * 추가  한자리 두자리는 가입 시점에서 가입못하는 걸로 가정
+			int starNum = password.length()-2;
+			String starStr="";
+			for(int i=0; i<starNum; i++) {
+				starStr=starStr+"*";
+			}
+			
+			 result = first + starStr +last;
 			 
 		
 		}else {
