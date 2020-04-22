@@ -23,16 +23,16 @@ public class FindPasswordServiceImpl implements FindPasswordService {
 		
 		String password = dao.findPassword(id, email);
 		String result;
-		if(password.length()>1) {
-			
-			
+		if(!password.contains("없습니다.")) {
 			// Password 첫글자와 마지막 글자 잘라내기
 			String first=password.substring(0,1);
 			String last=password.substring(password.length()-1,password.length());
 			
 			 result = first + "***" +last;
+			 
+		
 		}else {
-			result="한글자 암호입니다.";
+			result = password;
 		}
 
 		return result;

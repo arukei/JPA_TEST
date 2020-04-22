@@ -25,10 +25,16 @@ public class FindPasswordDaoImpl implements FindPasswordDao {
 				.setParameter("id", id)
 				// 실행된 결과를 받아옴 
 				.getResultList();
+		
+		String password = null;
+		if(result.size()==0) {
+			password="일치하는 데이터가 없습니다.";
+		}else {
+			
+			User_Info userinfo = result.get(0);
+			password =userinfo.getPassword();
+		}
 
-		// 잘못된 정보 입력시 NullPointException 발생
-		User_Info userinfo = result.get(0);
-		String password =userinfo.getPassword();
 
 		
 		return password;
